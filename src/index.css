@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +36,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -97,5 +91,207 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: "Open Sans", sans-serif;
   }
+}
+
+/* Resume Builder Styles */
+
+/* Scrollbar for textarea */
+textarea::-webkit-scrollbar {
+  width: 6px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  @apply bg-resume-orange;
+  border-radius: 3px;
+}
+
+.progress-bar {
+  height: 4px;
+  @apply bg-gray-200;
+  margin: 20px 0;
+  position: relative;
+}
+
+.progress-indicator {
+  position: absolute;
+  top: -12px;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.progress-indicator .icon {
+  width: 28px;
+  height: 28px;
+  @apply bg-resume-orange;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.progress-indicator .label {
+  text-align: center;
+  font-size: 14px;
+  @apply text-resume-orange;
+  margin-top: 5px;
+}
+
+.step-indicator {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 16px;
+  @apply text-gray-500;
+  @apply bg-white/95;
+  padding: 4px 12px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.step-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  margin-top: 30px;
+}
+
+.section-title-container {
+  width: 100%;
+}
+
+.section-title {
+  @apply text-resume-orange;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 40px 0 20px 0;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
+  clear: both;
+  width: 100%;
+}
+
+.first-section-title {
+  margin-top: 20px;
+  border-top: none;
+  padding-top: 0;
+}
+
+.form-field {
+  margin-bottom: 18px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.form-field input, .form-field textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+}
+
+.required:after {
+  content: "*";
+  color: red;
+}
+
+.tips-button {
+  @apply bg-yellow-400;
+  @apply text-black;
+  padding: 5px 15px;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.char-count {
+  text-align: right;
+  font-size: 12px;
+  @apply text-gray-500;
+  margin-top: 5px;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.nav-button {
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.next-button {
+  @apply bg-green-700;
+}
+
+.prev-button {
+  @apply bg-gray-600;
+  margin-right: 10px;
+}
+
+.finish-button {
+  @apply bg-green-700;
+}
+
+.form-step {
+  position: relative;
+  padding-bottom: 20px;
+  margin-top: 30px;
+}
+
+/* Resume template styles */
+.resume-modern {
+  font-family: 'Poppins', sans-serif;
+}
+
+.resume-header {
+  position: relative;
+}
+
+.accent-bar {
+  height: 5px;
+  @apply bg-gradient-to-r from-resume-dark-orange to-resume-orange;
+}
+
+.experience-item {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.experience-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  @apply bg-resume-orange;
+}
+
+.skill-bubble {
+  @apply bg-gray-100;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  display: inline-block;
+  margin: 0.25rem;
 }
