@@ -63,13 +63,10 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-                resume: {
-                    orange: '#f26e50',
-                    'dark-orange': '#e45a33',
-                    blue: '#1e40af',
-                    'light-blue': '#60a5fa',
-                    brown: '#a16207',
-                    'light-brown': '#fbbf24',
+                education: {
+                    primary: '#4338ca', // indigo-700
+                    secondary: '#6366f1', // indigo-500
+                    accent: '#a855f7', // purple-500
                 }
 			},
 			borderRadius: {
@@ -93,11 +90,22 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+                'fade-in': {
+                    '0%': {
+                        opacity: '0',
+                        transform: 'translateY(10px)'
+                    },
+                    '100%': {
+                        opacity: '1',
+                        transform: 'translateY(0)'
+                    }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+                'fade-in': 'fade-in 0.3s ease-out',
 			}
 		}
 	},

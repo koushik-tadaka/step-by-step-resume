@@ -14,16 +14,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 252 56% 45%; /* Indigo-based primary */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
+    --secondary: 250 91% 76%; /* Purple-based secondary */
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 262 83% 67%; /* Purple accent */
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -31,18 +31,9 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 252 56% 45%; /* Indigo-based ring */
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -55,16 +46,16 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 252 56% 55%; /* Indigo-based primary - darker */
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 250 91% 66%; /* Purple-based secondary - darker */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 262 83% 57%; /* Purple accent - darker */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -72,15 +63,7 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --ring: 252 56% 55%; /* Indigo-based ring - darker */
   }
 }
 
@@ -93,205 +76,75 @@
     @apply bg-background text-foreground;
     font-family: "Open Sans", sans-serif;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", sans-serif;
+  }
 }
 
-/* Resume Builder Styles */
-
-/* Scrollbar for textarea */
-textarea::-webkit-scrollbar {
-  width: 6px;
+/* Educational website specific styles */
+.course-card {
+  @apply transition-all duration-300;
 }
 
-textarea::-webkit-scrollbar-thumb {
-  @apply bg-resume-orange;
-  border-radius: 3px;
+.course-card:hover {
+  @apply transform -translate-y-1 shadow-lg;
 }
 
-.progress-bar {
-  height: 4px;
-  @apply bg-gray-200;
-  margin: 20px 0;
-  position: relative;
+.hero-gradient {
+  background: linear-gradient(90deg, #4338ca 0%, #8b5cf6 100%);
 }
 
-.progress-indicator {
-  position: absolute;
-  top: -12px;
-  transform: translateX(-50%);
-  z-index: 10;
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-500;
 }
 
-.progress-indicator .icon {
-  width: 28px;
-  height: 28px;
-  @apply bg-resume-orange;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+.category-badge {
+  @apply inline-flex items-center rounded-full px-3 py-0.5 text-sm font-medium bg-indigo-100 text-indigo-800;
 }
 
-.progress-indicator .label {
-  text-align: center;
-  font-size: 14px;
-  @apply text-resume-orange;
-  margin-top: 5px;
+/* Pricing cards */
+.pricing-card {
+  @apply bg-white rounded-lg shadow-lg p-6 border border-gray-100 transition-transform duration-300;
 }
 
-.step-indicator {
-  position: absolute;
-  right: 0;
-  top: 0;
-  font-size: 16px;
-  @apply text-gray-500;
-  @apply bg-white/95;
-  padding: 4px 12px;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  z-index: 10;
+.pricing-card:hover {
+  @apply transform scale-[1.02];
 }
 
-.step-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  position: relative;
-  margin-top: 30px;
+/* Custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
-.section-title-container {
-  width: 100%;
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
-.section-title {
-  @apply text-resume-orange;
-  font-size: 22px;
-  font-weight: 600;
-  margin: 40px 0 20px 0;
-  padding-top: 10px;
-  border-top: 1px solid #f0f0f0;
-  clear: both;
-  width: 100%;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.first-section-title {
-  margin-top: 20px;
-  border-top: none;
-  padding-top: 0;
-}
-
-.form-field {
-  margin-bottom: 18px;
-}
-
-.form-field label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: 500;
-}
-
-.form-field input, .form-field textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #d0d0d0;
-  border-radius: 4px;
-}
-
-.required:after {
-  content: "*";
-  color: red;
-}
-
-.tips-button {
-  @apply bg-yellow-400;
-  @apply text-black;
-  padding: 5px 15px;
-  border-radius: 4px;
-  font-size: 14px;
-  cursor: pointer;
-  display: inline-block;
-}
-
-.char-count {
-  text-align: right;
-  font-size: 12px;
-  @apply text-gray-500;
-  margin-top: 5px;
-}
-
-.nav-buttons {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 30px;
-  padding-top: 15px;
-  border-top: 1px solid #f0f0f0;
-}
-
-.nav-button {
-  padding: 10px 20px;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.next-button {
-  @apply bg-green-700;
-}
-
-.prev-button {
-  @apply bg-gray-600;
-  margin-right: 10px;
-}
-
-.finish-button {
-  @apply bg-green-700;
-}
-
-.form-step {
-  position: relative;
-  padding-bottom: 20px;
-  margin-top: 30px;
-}
-
-/* Resume template styles */
-.resume-modern {
-  font-family: 'Poppins', sans-serif;
-}
-
-.resume-header {
-  position: relative;
-}
-
-.accent-bar {
-  height: 5px;
-  @apply bg-gradient-to-r from-resume-dark-orange to-resume-orange;
-}
-
-.experience-item {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.experience-item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.5rem;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  @apply bg-resume-orange;
-}
-
-.skill-bubble {
+::-webkit-scrollbar-track {
   @apply bg-gray-100;
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: 0.75rem;
-  display: inline-block;
-  margin: 0.25rem;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-indigo-400;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-indigo-600;
 }
